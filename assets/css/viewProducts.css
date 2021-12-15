@@ -1,0 +1,37 @@
+
+ .zoom-image-container {
+   
+   position: relative;
+   transform: translate(0%, 0%);
+   z-index: 2;
+   
+ }
+ 
+ .zoom-image {
+   cursor: zoom-in;
+   position: relative;
+   
+ }
+ 
+ .zoom-image img {
+   
+   border-radius: 5px;
+   box-shadow: 0 18px 5px -15px rgba( 0, 0, 0, .5 );
+   
+ }
+ 
+ .hover-image {
+   
+   position: fixed;
+   width: 300px;
+   height: 300px;
+   
+   border-radius: 100%;
+   
+   transform: translate( -50%, -30% );
+   
+   pointer-events: none;
+   
+   box-shadow: 0 0 10px rgba( 0, 0, 0, .5 );
+   
+ }

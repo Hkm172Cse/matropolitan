@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Raleway:400,200);
+
+.maintag {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+.formDesign{
+    padding-top: 30px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+}
+
+placeholder{
+    font-style: italic;
+    color: darkblue;
+}
+
+/* Unit adding JS supplimentary CSS */
+.aNewTextStyle {
+    width: 100%;
+    padding: 5px;
+    border: solid gray 1px;
+    background-color: white;
+    color: black;
+    font-size: 25px;
+    box-sizing: border-box;
+}
