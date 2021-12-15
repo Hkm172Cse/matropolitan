@@ -19,6 +19,11 @@
             $query = $this->db->get('table_product')->row();
             return $query;
         }
+
+        public function update($data){
+            $id = $data['id'];
+            return $this->db->update('table_product', $data, array('id' => $data['id'])); 
+        }
         
 
 }

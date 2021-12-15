@@ -11,7 +11,7 @@
                 <!--START RIGHT-->
                 <div class="maintag">
                         <i class="fa fa-align-justify"></i><b> Update Product Details</b>
-                        <form class="formDesign" method="post" action="<?= base_url()?>product_update_byid">
+                        <form class="formDesign" method="post" action="<?= base_url()?>product_update_byid" enctype="multipart/form-data">
                             <input type="hidden" name="update_id" value="<?= $product_info->id?>">
                             <!--Product Catagory-->
                             <div class="form-group row">
@@ -101,16 +101,17 @@
                             </div><br />
 
                             <!--Upload Image-->
-                            <div class="form-group row">
+                            <!--div class="form-group row">
                                 <label for="staticEmail" class="col-sm-2 col-form-label">Image</label>
                                 <div class="col-sm-10">
                                     <div class="custom-file mb-3">
-                                        <input type="file" class="custom-file-input" id="customFile" name="image">
+                                        <input type="file" class="" id="customFile" name="image">
                                         <label class="custom-file-label" for="customFile">Choose file</label>
                                     </div>
 
                                 </div>
-                            </div><br />
+                            </div--><br />
+                            <input type="file" name="image">
 
                             <!--Remarks Description-->
                             <div class="form-group row">

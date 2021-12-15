@@ -31,15 +31,35 @@ class updateProduct_Controller extends CI_Controller {
     
 
         $data['product_name'] =  $this->input->post('product_name');
-        $data['catagory'] = $this->input->post('catagory');
         $data['type'] =  $this->input->post('type');
         $data['source'] = $this->input->post('source');
         $data['activity'] =  $this->input->post('activity');
         $data['lunch_date'] = $this->input->post('lunch_date');
         $data['remarks'] =  $this->input->post('remarks');
+
+        $sdata = array();
+        $config['upload_path']          = 'image/';
+        $config['allowed_types']        = 'gif|jpg|png';
+    
+
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('image'))
+        {
+                $error = array('error' => $this->upload->display_errors());
+
+            
+        }
+        else
+        {
+                $sdata =  $this->upload->data();
+                $data['image'] = $config['upload_path'].$sdata['file_name'];
+        }
+        if($this->Product_Model->update($data)){
+            redirect('all_product');
+        }
         
-        print_r($data);
-        exit();
+        
 
     }
 
