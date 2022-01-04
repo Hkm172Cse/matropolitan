@@ -40,6 +40,12 @@ class ProductController extends CI_Controller {
         $this->load->view('Componants/product_view', $data);
     }
 
+    public function product_delete( $id){
+        if($this->Product_Model->delete($id)){
+            redirect('all_product');
+        }
+    }
+
    public function product_insert(){
         
         $data['product_name'] =  $this->input->post('product_name');
@@ -50,7 +56,9 @@ class ProductController extends CI_Controller {
         $data['lunch_date'] = $this->input->post('lunch_date');
         
         $data['base_unit'] =  $this->input->post('base_unit');
+        $data['base_qnty_price'] = $this->input->post('base_qnty_price');
         $data['carton'] = $this->input->post('carton');
+        $data['carton_price'] = $this->input->post('carton_price');
         $data['remarks'] =  $this->input->post('remarks');
 
 

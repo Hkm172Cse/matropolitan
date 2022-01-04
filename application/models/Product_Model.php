@@ -19,6 +19,9 @@
             $query = $this->db->get('table_product')->row();
             return $query;
         }
+        public function delete($id){
+            return $this->db->delete('table_product', array('id' => $id));
+         }
 
         public function update($data){
             $id = $data['id'];

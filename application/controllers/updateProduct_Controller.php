@@ -26,6 +26,28 @@ class updateProduct_Controller extends CI_Controller {
         $this->load->view('Componants/update_product', $data);
     }
 
+    public function update_from_view(){
+        $data['id'] = $this->input->post('id');
+    
+
+        $data['product_name'] =  $this->input->post('product_name');
+        $data['catagory'] =  $this->input->post('catagory');
+        $data['type'] = $this->input->post('type');
+        $data['activity'] =  $this->input->post('activity');
+        $data['lunch_date'] = $this->input->post('lunch_date');
+        $data['base_unit'] =  $this->input->post('base_unit');
+
+        $data['base_qnty_price'] =  $this->input->post('base_qnty_price');
+        $data['carton_price'] =  $this->input->post('carton_price');
+        $data['remarks'] =  $this->input->post('remarks');
+        
+
+        
+        if($this->Product_Model->update($data)){
+            redirect('product_view/'.$data['id']);
+        }
+    }
+
     public function updateMethod(){
         $data['id'] = $this->input->post('update_id');
     

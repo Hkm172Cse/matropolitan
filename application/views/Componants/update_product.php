@@ -126,6 +126,7 @@
                                 <button type="submit" class="btn btn-primary btn-block"
                                     data-toggle="button">Submit</button>
                             </div><br />
+                        </form>
                     </div>
 
 
