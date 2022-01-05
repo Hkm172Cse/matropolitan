@@ -54,7 +54,6 @@ class ProductController extends CI_Controller {
         $data['source'] = $this->input->post('source');
         $data['activity'] =  $this->input->post('activity');
         $data['lunch_date'] = $this->input->post('lunch_date');
-        
         $data['base_unit'] =  $this->input->post('base_unit');
         $data['base_qnty_price'] = $this->input->post('base_qnty_price');
         $data['carton'] = $this->input->post('carton');
