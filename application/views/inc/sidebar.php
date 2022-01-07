@@ -20,7 +20,7 @@
                         </li>
                         <li class='has-sub'><a href='#'>Requisitions</a>
                             <ul>
-                                <li><a href='AOrequisitions.html'>Area Office Requisitions</a>
+                                <li><a href='<?= base_url()?>areaOffice'>Area Office Requisitions</a>
                                 </li>
                                 <li><a href='DBrequisitions.html'>Distributors Requisitions</a>
                                 </li>

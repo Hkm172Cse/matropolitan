@@ -16,6 +16,8 @@ $route['product_view/(.+)'] = 'ProductController/product_view/$1';
 $route['product_update_byid'] = 'updateProduct_Controller/updateMethod';
 $route['product_update_view'] = 'updateProduct_Controller/update_from_view';
 $route['delete_product/(.+)']       = 'ProductController/product_delete/$1'; 
+$route['areaOffice']            = 'AreaOffice_Controller/index';
+$route['requsition_page']        = 'AreaOffice_Controller/create_requisition_index';
 
 
 

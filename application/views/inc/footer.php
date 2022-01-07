@@ -31,6 +31,30 @@ crossorigin="anonymous"></script>
 
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 
+<!-- add requisition-->
+<script>
+    $(function() {
+    $('#toggle-event').change(function() {
+      $('#console-event').html('Toggle: ' + $(this).prop('checked'))
+    })
+  })
+
+function rounder(num) {    
+    return +(Math.round(num + "e+2")  + "e-2");
+}
+
+for(let i=1; i<100; i++){
+  $("#myInput"+i).on("change", function(){
+     //var X = document.getElementById("myInput2").value;
+     let X = parseInt($(this).val())
+     let pa=parseInt($("#pa"+i).html());
+     $("#pak"+i).html(rounder(X/pa) + " S/C")
+  })
+}  
+</script>
+
+<!--add requistion-->
+
 <script type="text/javascript"
     src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
 <script>
