@@ -43,8 +43,8 @@
             $query_result = $this->db->query("select * from table_user where email='$data'");
             return $query_result->result();
         }
-        
 
+        // this is End Modal
 }
 
 
