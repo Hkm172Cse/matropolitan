@@ -30,6 +30,20 @@
                                 </li>
                             </ul>
                         </li>
+                        <li class='has-sub'><a href='#'>Stock</a>
+                            <ul>
+                                <li><a href='<?= base_url()?>addStock'>Add Stock</a>
+                                </li>
+                                <li><a href='inventoryAdjustments.html'>Inventory Adjustments</a>
+                                </li>
+                                <li><a href='inventoryStatus.html'>Inventory Status</a>
+                                </li>
+                                <li><a href='NCP.html'>Non Confirming Products (NCP)</a>
+                                </li>
+                                <li><a href='currentPrice.html'>Current Price</a>
+                                </li>
+                            </ul>
+                        </li>
                         <li class='has-sub'><a href='#'>Inventory</a>
                             <ul>
                                 <li><a href='currentInventory.html'>Current Inventory</a>

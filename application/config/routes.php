@@ -18,6 +18,7 @@ $route['product_update_view'] = 'updateProduct_Controller/update_from_view';
 $route['delete_product/(.+)']       = 'ProductController/product_delete/$1'; 
 $route['areaOffice']            = 'AreaOffice_Controller/index';
 $route['requsition_page']        = 'AreaOffice_Controller/create_requisition_index';
+$route['addStock']               = 'Stock_Controller/StockIndex';
 
 
 
