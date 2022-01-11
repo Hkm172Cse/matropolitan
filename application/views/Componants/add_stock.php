@@ -42,7 +42,13 @@
                             </thead>
                             <tbody>
                                 <!-- 1st RAW -->
-                                <?php foreach($product_name as $val){?>
+                                <?php
+                                    $inputId = 0;
+                                    $pak = 0;
+                                    $pa = 0;
+                                    $myname = 0;
+                                    foreach($product_name as $val){
+                                ?>
                                 <tr>
                                     <!-- SL# -->
                                     <th scope="row">1</th>
@@ -50,7 +56,7 @@
                                     <td><input type="text" class="form-control" readonly value="<?= $val->product_name?>"/></td>
                                     <!-- Quantity -->
                                     <td align="center">
-                                        <input type="number" id="myInput1" onchange="getInputValue()" class="form-control col-xl-4"/>
+                                        <input type="number" id="myInput<?php echo ++$inputId;?>" name="myinput<?php echo ++$myname?>" onchange="getInputValue()" class="form-control col-xl-4"/>
                                     </td>
                                     <!-- Stock -->
                                     <td align="center">
@@ -58,10 +64,10 @@
                                     </td>
                                     <!-- Base Unit -->
                                     <td align="center">
-                                        <button class="btn btn-outline-primary" id="pa1">12</button>
+                                        <button class="btn btn-outline-primary" id="pa<?php echo ++$pa;?>">12</button>
                                     </td>
                                     <!-- Remarks -->
-                                    <td align="center" id="pak1">
+                                    <td align="center" id="pak<?php echo ++$pak;?>">
                                         0 S/C
                                     </td>
                                 </tr>
