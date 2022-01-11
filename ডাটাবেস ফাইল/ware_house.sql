@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 07, 2022 at 04:26 PM
--- Server version: 10.4.19-MariaDB
--- PHP Version: 8.0.7
+-- Generation Time: Jan 11, 2022 at 09:37 PM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -58,6 +58,38 @@ INSERT INTO `table_product` (`id`, `product_name`, `catagory`, `type`, `source`,
 (10, '', 'Skin', 'Saleable', 'Valuka Fectory', '', '2022-01-07', 'image/bannerImg2.png', '24', 10, 18, 200, 'AVGS', '2022-01-03 18:30:04'),
 (12, 'vasiline', 'Skin Care', 'Sample', 'Valuka Fectory', 'option1', '2022-01-05', 'image/bill4.jpg', 'Piece', 15, 12, 300, 'abg', '2022-01-05 12:59:57');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `table_stock_product`
+--
+
+CREATE TABLE `table_stock_product` (
+  `id` int(11) NOT NULL,
+  `product_name` varchar(255) NOT NULL,
+  `quantity` double NOT NULL,
+  `stock` double NOT NULL,
+  `base_unit` double NOT NULL,
+  `remark` double NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `table_stock_product`
+--
+
+INSERT INTO `table_stock_product` (`id`, `product_name`, `quantity`, `stock`, `base_unit`, `remark`, `created`) VALUES
+(46, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:27:30'),
+(47, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:28:04'),
+(48, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:28:04'),
+(49, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:42:34'),
+(50, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:42:34'),
+(51, 'Petrolium jely 50 gm', 24, 0, 12, 2, '2022-01-11 19:42:34'),
+(52, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:47:14'),
+(53, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:47:14'),
+(54, 'Petrolium jely 50 gm', 24, 0, 12, 2, '2022-01-11 19:47:14'),
+(55, '', 18, 0, 18, 1, '2022-01-11 19:47:56');
+
 --
 -- Indexes for dumped tables
 --
@@ -69,6 +101,12 @@ ALTER TABLE `table_product`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `table_stock_product`
+--
+ALTER TABLE `table_stock_product`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -77,6 +115,12 @@ ALTER TABLE `table_product`
 --
 ALTER TABLE `table_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `table_stock_product`
+--
+ALTER TABLE `table_stock_product`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=56;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
