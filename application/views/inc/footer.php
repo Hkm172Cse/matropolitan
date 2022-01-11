@@ -47,8 +47,8 @@ for(let i=1; i<100; i++){
   $("#myInput"+i).on("change", function(){
      //var X = document.getElementById("myInput2").value;
      let X = parseInt($(this).val())
-     let pa=parseInt($("#pa"+i).html());
-     $("#pak"+i).html(rounder(X/pa) + " S/C")
+     let pa=parseInt($("#pa"+i).val());
+     $("#pak"+i).val(rounder(X/pa) + " S/C")
   })
 }  
 </script>

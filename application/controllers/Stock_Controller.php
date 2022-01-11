@@ -10,6 +10,7 @@ class Stock_Controller extends CI_Controller {
         $this->load->library('form_validation');
 
 		$this->load->model('Product_Model');
+        $this->load->model('Stock_model');
 	}
     public function StockIndex(){
         $data['header_src'] = $this->load->view('inc/header_src', '', true);
@@ -20,6 +21,30 @@ class Stock_Controller extends CI_Controller {
         $this->load->view('Componants/add_stock', $data);
     }
 
+    public function insert_stock(){
+       $all_data = array();
+       $data = $this->input->post();
+       for($i=0; $i<sizeof($data['product_name']); $i++){
+           
+           if($data['quantity'][$i] > 0 ){
+               $arr = array('product_name'=>$data['product_name'][$i],'quantity'=>$data['quantity'][$i],'stock'=>$data['stock'][$i],'base_unit'=>$data['base_unit'][$i],'remark'=>$data['remark'][$i]);
+               $all_data[] = $arr;
+           }
+          
+       }
+   
+       $result = $this->Stock_model->insert_entry($all_data);
+    
+    }
+
+    public function view_stock_index(){
+        $data['header_src'] = $this->load->view('inc/header_src', '', true);
+        $data['header'] = $this->load->view('inc/header', '', true);
+        $data['sidebar'] = $this->load->view('inc/sidebar', '', true);
+        $data['footer'] = $this->load->view('inc/footer', '', true);
+        $data['Stock_data'] = $this->Stock_model->selectAll();
+        $this->load->view('Componants/Stock_view', $data);
+    }
    
     // in the below all code are deletable
     public function index(){
