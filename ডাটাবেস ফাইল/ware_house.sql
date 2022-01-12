@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 11, 2022 at 09:37 PM
+-- Generation Time: Jan 12, 2022 at 07:10 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -73,22 +73,6 @@ CREATE TABLE `table_stock_product` (
   `remark` double NOT NULL,
   `created` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `table_stock_product`
---
-
-INSERT INTO `table_stock_product` (`id`, `product_name`, `quantity`, `stock`, `base_unit`, `remark`, `created`) VALUES
-(46, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:27:30'),
-(47, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:28:04'),
-(48, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:28:04'),
-(49, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:42:34'),
-(50, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:42:34'),
-(51, 'Petrolium jely 50 gm', 24, 0, 12, 2, '2022-01-11 19:42:34'),
-(52, 'vasiline', 12, 50, 12, 1, '2022-01-11 19:47:14'),
-(53, 'sope 48 gm', 240, 0, 120, 2, '2022-01-11 19:47:14'),
-(54, 'Petrolium jely 50 gm', 24, 0, 12, 2, '2022-01-11 19:47:14'),
-(55, '', 18, 0, 18, 1, '2022-01-11 19:47:56');
 
 --
 -- Indexes for dumped tables

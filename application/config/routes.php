@@ -19,6 +19,7 @@ $route['delete_product/(.+)']   = 'ProductController/product_delete/$1';
 $route['areaOffice']            = 'AreaOffice_Controller/index';
 $route['requsition_page']       = 'AreaOffice_Controller/create_requisition_index';
 $route['addStock']              = 'Stock_Controller/StockIndex';
+
 $route['add_stock_req']         = 'Stock_Controller/insert_stock';
 $route['view_Stock']            = 'Stock_Controller/view_stock_index';
 
