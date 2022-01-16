@@ -36,24 +36,24 @@
         <?php
             $count = 0;
              foreach($Stock_data as $val_stock){
-            $stock = $val_stock->quantity+$val_stock->stock;    
+           // $stock = $val_stock->quantity+$val_stock->stock;    
         ?>
             
         <tr>
             <!-- SL# -->
             <th scope="row"><?= ++$count?></th>
             <!-- Stock Code -->
-            <td>100012122112</td>
+            <td><?= $val_stock->chalanId?></td>
             <!-- Source -->
-            <td>Valuka Fectory</td>
+            <td><?= $val_stock->aria_office ?></td>
             <!-- Product Name -->
             <td><?= $val_stock->product_name?></td>
             <!-- Total Quantity -->
-            <td><?= $stock;?></td>
+            <td><?= $val_stock->stock;?></td>
             <!-- Date -->   
-            <td align="center">12/11/2021</td>
+            <td align="center"><?= $val_stock->date?></td>
             <!-- Authorized -->   
-            <td align="center">Zamal Hossain</td>
+            <td align="center"><?= $val_stock->requestBy?></td>
         </tr>
         <?php }?>
 

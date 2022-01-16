@@ -10,6 +10,7 @@ class ProductController extends CI_Controller {
         $this->load->library('form_validation');
 
 		$this->load->model('Product_Model');
+        $this->load->model('Stock_model');
 	}
 
    
@@ -80,6 +81,7 @@ class ProductController extends CI_Controller {
                 $data['image'] = $config['upload_path'].$sdata['file_name'];
         }
         if($this->Product_Model->insert_entry($data)){
+            $this->Stock_model->insert_one_data($data['product_name'],$data['carton']);
             redirect('all_product');
         }
    }

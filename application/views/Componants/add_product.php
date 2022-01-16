@@ -127,7 +127,7 @@
               <div class="form-group row">
                 <label class="col-sm-2 col-form-label">Carton</label>
                 <div class="col-sm-3">
-                  <select name="carton" class="form-control">
+                  <select name="carton" type="number" class="form-control">
                     <option>---- Select ----</option>
                     <option>4</option>
                     <option>8</option>

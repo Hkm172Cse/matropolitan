@@ -46,8 +46,10 @@ function rounder(num) {
 for(let i=1; i<100; i++){
   $("#myInput"+i).on("change", function(){
      //var X = document.getElementById("myInput2").value;
-     let X = parseInt($(this).val())
-     let pa=parseInt($("#pa"+i).val());
+     let X      = parseInt($(this).val())
+     let pa     = parseInt($("#pa"+i).val());
+     let stock  = parseInt($("#stock"+i).val());
+     $("#stock"+i).val(parseInt(X+stock));
      $("#pak"+i).val(rounder(X/pa) + " S/C")
   })
 }  

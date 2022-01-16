@@ -4,10 +4,16 @@
        
         
         public function insert_entry($data)
-        {
-               
-              return $this->db->insert_batch('table_stock_product', $data);
+        {    
+          // return $this->db->insert_batch('table_stock_product', $data);
+          //return $this->db->replace('table_stock_product', $data);
+         return $this->db->update_batch('table_stock_product', $data, 'id');
         }
+
+        public function insert_one_data($product,$carton){
+            return $this->db->query("INSERT INTO `table_stock_product` (`id`, `product_name`, `quantity`, `stock`, `carton`, `remark`, `created`) VALUES (NULL, '$product', '', '', '$carton', '', current_timestamp())");
+        }
+
         public function selectAll(){
             $query = $this->db->query("select * from table_stock_product order by id DESC");
             return $query->result();

@@ -17,23 +17,29 @@ class Stock_Controller extends CI_Controller {
         $data['header'] = $this->load->view('inc/header', '', true);
         $data['sidebar'] = $this->load->view('inc/sidebar', '', true);
         $data['footer'] = $this->load->view('inc/footer', '', true);
-        $data['product_name'] = $this->Product_Model->selectAll();
+        $data['product_name'] = $this->Stock_model->selectAll();
         $this->load->view('Componants/add_stock', $data);
     }
 
     public function insert_stock(){
+        $num = "1000";
+        $rnd = rand(99999,999999);
+        $chalanId =  $num.$rnd;
        $all_data = array();
        $data = $this->input->post();
        for($i=0; $i<sizeof($data['product_name']); $i++){
            
            if($data['quantity'][$i] > 0 ){
-               $arr = array('product_name'=>$data['product_name'][$i],'quantity'=>$data['quantity'][$i],'stock'=>$data['stock'][$i],'base_unit'=>$data['base_unit'][$i],'remark'=>$data['remark'][$i]);
+               $arr = array('id'=>$data['id'][$i], 'product_name'=>$data['product_name'][$i],'quantity'=>$data['quantity'][$i],'stock'=>$data['stock'][$i],'carton'=>$data['carton'][$i],'remark'=>$data['remark'][$i], 'aria_office'=>$data['aria_office'], 'date'=>$data['date'], 'requestBy'=>$data['requestBy'], 'chalanId'=>$chalanId);
                $all_data[] = $arr;
            }
           
        }
-   
+       
        $result = $this->Stock_model->insert_entry($all_data);
+       if($result==true){
+           redirect('view_Stock');
+       }
     
     }
 
