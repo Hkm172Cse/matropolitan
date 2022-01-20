@@ -99,12 +99,13 @@
                                     $pa = 0;
                                     $myname = 0;
                                     $mystock = 0;
+                                    $count = 0;
                                     foreach($product_name as $val){
                                        
                                 ?>
                                 <tr>
                                     <!-- SL# -->
-                                    <th scope="row">1</th>
+                                    <th scope="row"><?= ++$count;?></th>
                                     <!-- Product Name -->
                                     <td><input type="text" class="form-control" name="product_name[]" readonly value="<?= $val->product_name?>"/>
                                     <input type="hidden" name="id[]" class="form-control" name="product_name[]" readonly value="<?= $val->id?>"/>

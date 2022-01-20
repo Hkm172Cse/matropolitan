@@ -53,159 +53,37 @@
                                 </tr>
                             </thead>
                             <tbody class="align-items-center">
-                                <!-- 1st RAW -->
+                               <?php
+                                    $count = 0;
+                                    foreach($riqusition_info as $val){
+
+                                    
+                               ?>
                                 <tr>
                                     <!-- SL# -->
-                                    <th scope="row">1</th>
+                                    <th scope="row"><?= ++$count?></th>
                                     <!-- Challan No. -->
-                                    <td>100012122112</td>
+                                    <td><?= $val->chalanId?></td>
                                     <!-- Area Office Name -->
-                                    <td>Sylhet-1</td>
+                                    <td><?= $val->aria_officer?></td>
                                     <!-- Transaction Type -->
                                     <td>CWH to AO</td>
                                     <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
+                                    <td><?= $val->date;?></td>
                                     <!-- Requisition by -->   
-                                    <td align="center">Zamal Hossain</td>
+                                    <td align="center"><?= $val->requestBy?></td>
                                     <!-- Status -->
                                     <td align="center" class="align-middle">
                                         <button class="btn btn-danger btn-sm">
-                                            Due
+                                            <?= $val->status;?>
                                         </button>
 
                                     </td>
                                     <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
+                                    <td  align="center" class="align-middle"><a href="<?= base_url()?>confirm_reqisition_page/<?= $val->chalanId?>"><i
                                                 class="fa fa-eye"></i></a></td>
                                 </tr>
-
-                                <!-- 2nd RAW -->
-                                <tr>
-                                    <!-- SL# -->
-                                    <th scope="row">2</th>
-                                    <!-- Challan No. -->
-                                    <td>100012122113</td>
-                                    <!-- Area Office Name -->
-                                    <td>Sylhet-2</td>
-                                    <!-- Transaction Type -->
-                                    <td>CWH to AO</td>
-                                    <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
-                                    <!-- Requisition by -->   
-                                    <td align="center">Salam Reza</td>
-                                    <!-- Status -->
-                                    <td align="center" class="align-middle">
-                                        <button class="btn btn-success btn-sm">
-                                            Confirm
-                                        </button>
-
-                                    </td>
-                                    <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
-                                                class="fa fa-eye"></i></a></td>
-                                </tr>
-                                <!-- 3rd RAW -->
-                                <tr>
-                                    <!-- SL# -->
-                                    <th scope="row">3</th>
-                                    <!-- Challan No. -->
-                                    <td>100012122114</td>
-                                    <!-- Area Office Name -->
-                                    <td>Nuakhali-2</td>
-                                    <!-- Transaction Type -->
-                                    <td>CWH to AO</td>
-                                    <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
-                                    <!-- Requisition by -->   
-                                    <td align="center">Asaduzzam</td>
-                                    <!-- Status -->
-                                    <td align="center" class="align-middle">
-                                        <button class="btn btn-danger btn-sm">
-                                            Due
-                                        </button>
-
-                                    </td>
-                                    <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
-                                                class="fa fa-eye"></i></a></td>
-                                </tr>
-                                <!-- 4th RAW -->
-                                <tr>
-                                    <!-- SL# -->
-                                    <th scope="row">4</th>
-                                    <!-- Challan No. -->
-                                    <td>100012122116</td>
-                                    <!-- Area Office Name -->
-                                    <td>Dhaka-1</td>
-                                    <!-- Transaction Type -->
-                                    <td>CWH to AO</td>
-                                    <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
-                                    <!-- Requisition by -->   
-                                    <td align="center">Rajesh Sinha</td>
-                                    <!-- Status -->
-                                    <td align="center" class="align-middle">
-                                        <button class="btn btn-danger btn-sm">
-                                            Due
-                                        </button>
-
-                                    </td>
-                                    <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
-                                                class="fa fa-eye"></i></a></td>
-                                </tr>
-                                <!-- 5th RAW -->
-                                <tr>
-                                    <!-- SL# -->
-                                    <th scope="row">5</th>
-                                    <!-- Challan No. -->
-                                    <td>100012122117</td>
-                                    <!-- Area Office Name -->
-                                    <td>Dhaka-4</td>
-                                    <!-- Transaction Type -->
-                                    <td>CWH to AO</td>
-                                    <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
-                                    <!-- Requisition by -->   
-                                    <td align="center">Rajesh Sinha</td>
-                                    <!-- Status -->
-                                    <td align="center" class="align-middle">
-                                        <button class="btn btn-success btn-sm">
-                                            Confirm
-                                        </button>
-
-                                    </td>
-                                    <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
-                                                class="fa fa-eye"></i></a></td>
-                                </tr>
-                                <!-- 6th RAW -->
-                                <tr>
-                                    <!-- SL# -->
-                                    <th scope="row">6</th>
-                                    <!-- Challan No. -->
-                                    <td>100012122119</td>
-                                    <!-- Area Office Name -->
-                                    <td>Barishal</td>
-                                    <!-- Transaction Type -->
-                                    <td>CWH to AO</td>
-                                    <!-- Requisition Date -->
-                                    <td>12/07/2021</td>
-                                    <!-- Requisition by -->   
-                                    <td align="center">Surajit Sinha</td>
-                                    <!-- Status -->
-                                    <td align="center" class="align-middle">
-                                        <button class="btn btn-success btn-sm">
-                                            Confirm
-                                        </button>
-
-                                    </td>
-                                    <!-- View -->
-                                    <td  align="center" class="align-middle"><a href="AO/AOConfirm.html"><i
-                                                class="fa fa-eye"></i></a></td>
-                                </tr>
-                                
-
+                                <?php }?>
                             </tbody>
                         </table>
 

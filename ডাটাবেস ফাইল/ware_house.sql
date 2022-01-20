@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 16, 2022 at 10:17 PM
+-- Generation Time: Jan 20, 2022 at 01:06 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -20,6 +20,30 @@ SET time_zone = "+00:00";
 --
 -- Database: `ware_house`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `requsition_member`
+--
+
+CREATE TABLE `requsition_member` (
+  `id` int(11) NOT NULL,
+  `chalanId` varchar(50) NOT NULL,
+  `aria_officer` varchar(100) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `requestBy` varchar(200) NOT NULL,
+  `status` varchar(100) NOT NULL DEFAULT 'due'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `requsition_member`
+--
+
+INSERT INTO `requsition_member` (`id`, `chalanId`, `aria_officer`, `date`, `requestBy`, `status`) VALUES
+(5, '1000755722', 'Sylhet-2', '01/20/2022', 'Aman Ullah', 'confirm'),
+(6, '1000234144', '', '', '', 'confirm'),
+(7, '1000642304', '', '', '', 'confirm');
 
 -- --------------------------------------------------------
 
@@ -72,6 +96,40 @@ INSERT INTO `table_product` (`id`, `product_name`, `catagory`, `type`, `source`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `table_requisition`
+--
+
+CREATE TABLE `table_requisition` (
+  `id` int(11) NOT NULL,
+  `product_name` varchar(100) NOT NULL,
+  `quantity` varchar(100) NOT NULL,
+  `stock` varchar(100) NOT NULL,
+  `carton` varchar(50) NOT NULL,
+  `remark` double NOT NULL DEFAULT current_timestamp(),
+  `aria_office` varchar(200) NOT NULL,
+  `date` varchar(255) NOT NULL,
+  `requestBy` varchar(220) NOT NULL,
+  `chalanId` varchar(255) NOT NULL,
+  `stockId` int(11) NOT NULL,
+  `created` timestamp NOT NULL DEFAULT current_timestamp(),
+  `status` varchar(50) NOT NULL DEFAULT 'due'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `table_requisition`
+--
+
+INSERT INTO `table_requisition` (`id`, `product_name`, `quantity`, `stock`, `carton`, `remark`, `aria_office`, `date`, `requestBy`, `chalanId`, `stockId`, `created`, `status`) VALUES
+(88, 'Petrolium jely 50 gm', '50', '400', '12', 4.17, 'Sylhet-2', '01/20/2022', 'Aman Ullah', '1000755722', 59, '2022-01-19 22:46:46', 'due'),
+(89, 'Sampho', '50', '100', '24', 2.08, 'Sylhet-2', '01/20/2022', 'Aman Ullah', '1000755722', 57, '2022-01-19 22:46:46', 'due'),
+(90, 'Chips', '300', '800', '120', 2.5, '', '', '', '1000234144', 71, '2022-01-19 23:41:22', 'due'),
+(91, 'Kit Kat', '500', '2000', '100', 5, '', '', '', '1000234144', 62, '2022-01-19 23:41:22', 'due'),
+(92, 'Chips', '25', '600', '120', 0.21, '', '', '', '1000642304', 71, '2022-01-20 00:03:25', 'due'),
+(93, 'Photato', '25', '800', '40', 0.63, '', '', '', '1000642304', 68, '2022-01-20 00:03:25', 'due');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `table_stock_product`
 --
 
@@ -95,29 +153,41 @@ CREATE TABLE `table_stock_product` (
 
 INSERT INTO `table_stock_product` (`id`, `product_name`, `quantity`, `stock`, `carton`, `remark`, `aria_office`, `date`, `requestBy`, `chalanId`, `created`) VALUES
 (56, 'vasiline', 45, 90, 12, 3.75, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
-(57, 'Sampho', 50, 100, 24, 2.08, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
+(57, 'Sampho', 50, 50, 24, 2.08, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
 (58, 'sope 48 gm', 100, 200, 120, 0.83, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
-(59, 'Petrolium jely 50 gm', 200, 400, 12, 16.67, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
+(59, 'Petrolium jely 50 gm', 200, 350, 12, 16.67, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-12 19:25:00'),
 (61, 'abc', 52, 104, 0, 0, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 15:33:04'),
-(62, 'Kit Kat', 1000, 2000, 100, 10, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 15:37:09'),
-(63, 'Kit Kat', 200, 400, 20, 10, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 16:39:03'),
+(62, 'Kit Kat', 1000, 1500, 100, 10, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 15:37:09'),
+(63, 'Kit Kat', 500, 400, 20, 25, 'Sylhet-1', '01/20/2022', 'Surujit', '1000226488', '2022-01-16 16:39:03'),
 (64, 'bodna', 500, 1000, 120, 4.17, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 16:39:03'),
 (65, 'Stavary Choklet', 500, 1000, 20, 25, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 16:39:03'),
 (66, 'Kit Kat', 52, 104, 8, 6.5, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 16:39:03'),
-(67, 'Kit Kat', 200, 400, 8, 25, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 16:39:03'),
-(68, 'Photato', 150, 300, 40, 3.75, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 19:52:49'),
+(67, 'Kit Kat', 400, 400, 8, 50, 'Sylhet-1', '01/20/2022', 'Surujit', '1000226488', '2022-01-16 16:39:03'),
+(68, 'Photato', 500, 775, 40, 12.5, 'Sylhet-3', '01/19/2022', 'Azizul Hakim', '1000443547', '2022-01-16 19:52:49'),
 (69, 'Bomba Photo', 100, 200, 25, 4, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 19:53:57'),
-(70, 'Chilo', 50, 100, 0, 0, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 19:57:26'),
-(71, 'Chips', 200, 400, 120, 1.67, 'Dhaka-1', '01/17/2022', 'Azizul Hakim', '1000795435', '2022-01-16 20:00:57');
+(70, 'Chilo', 200, 300, 0, 0, 'Sylhet-1', '01/20/2022', 'Surujit', '1000226488', '2022-01-16 19:57:26'),
+(71, 'Chips', 400, 575, 120, 3.33, 'Sylhet-3', '01/19/2022', 'Azizul Hakim', '1000443547', '2022-01-16 20:00:57');
 
 --
 -- Indexes for dumped tables
 --
 
 --
+-- Indexes for table `requsition_member`
+--
+ALTER TABLE `requsition_member`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `table_product`
 --
 ALTER TABLE `table_product`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `table_requisition`
+--
+ALTER TABLE `table_requisition`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -131,10 +201,22 @@ ALTER TABLE `table_stock_product`
 --
 
 --
+-- AUTO_INCREMENT for table `requsition_member`
+--
+ALTER TABLE `requsition_member`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+
+--
 -- AUTO_INCREMENT for table `table_product`
 --
 ALTER TABLE `table_product`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+
+--
+-- AUTO_INCREMENT for table `table_requisition`
+--
+ALTER TABLE `table_requisition`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=94;
 
 --
 -- AUTO_INCREMENT for table `table_stock_product`

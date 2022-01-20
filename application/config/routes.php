@@ -22,6 +22,9 @@ $route['addStock']              = 'Stock_Controller/StockIndex';
 
 $route['add_stock_req']         = 'Stock_Controller/insert_stock';
 $route['view_Stock']            = 'Stock_Controller/view_stock_index';
+$route['add_requistion_req']    = 'AreaOffice_Controller/insert_requsition';
+$route['confirm_reqisition_page/(.+)'] = 'AreaOffice_Controller/requsition_confirm/$1';
+$route['requestBy']             = 'AreaOffice_Controller/update_stock';
 
 
 
